@@ -1,0 +1,14 @@
+.wrapper{
+    position: fixed;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: var(--layout-bg);
+    z-index: 2;
+}
+
+.player{
+    height: 90px;
+    background-color: var(--player-bg);
+    padding: 0 20px;
+}

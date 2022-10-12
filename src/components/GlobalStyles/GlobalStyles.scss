@@ -1,0 +1,76 @@
+@import 'normalize.css';
+
+:root{
+    --layout-bg: #162a45;
+    --player-bg: #172f4f;
+    --sidebar-bg: #ffffff0d;
+    --sidebar-popup-bg: #2a4162;
+    --primary-bg: #203d65;
+    --alpha-layout-bg: rgba(29,55,90,0.8);
+    --queue-player-popup-bg: #0b274c;
+    --blur-queue-bg: rgba(29,55,90,0.9019607843137255);
+    --purple-primary: #3b68ef;
+    --link-text-hover: #429eff;
+    --chart-bg-img-alpha: rgba(29,55,90,0.9);
+    --chart-box-bg-alpha: hsla(0,0%,100%,0.05);
+    --linear-gradient-bg: linear-gradient(180deg,#224472,#244572);
+}
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+html{
+    font-size: 62.5%;
+}
+
+body{
+    font-family: 'Roboto',sans-serif;
+    font-size: 1.6rem;
+    line-height: 1.5;
+    text-rendering: optimizeSpeed;
+}
+
+button, input{
+    border: none;
+    outline: none;
+    background-color: transparent;
+    cursor: pointer;
+}
+
+a[href]{
+    text-decoration: none;
+}
+
+// scroll bar
+
+html *::-webkit-scrollbar {
+    border-radius: 0;
+    width: 8px;
+}
+
+html *::-webkit-scrollbar {
+    border-radius: 0;
+    width: 8px;
+}
+
+html *::-webkit-scrollbar-thumb {
+    border-radius: 4px;
+    background-color: rgba(0, 0, 0, .15);
+}
+
+html *::-webkit-scrollbar-thumb {
+    border-radius: 4px;
+    background-color: rgba(0, 0, 0, .15);
+}
+
+html *::-webkit-scrollbar-track {
+    border-radius: 0;
+    background-color: rgba(0, 0, 0, 0);
+}
+
+html *::-webkit-scrollbar-track {
+    border-radius: 0;
+    background-color: rgba(0, 0, 0, 0);
+}

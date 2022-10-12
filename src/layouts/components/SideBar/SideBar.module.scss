@@ -1,0 +1,19 @@
+.wrapper{
+    position: relative;
+    z-index: 1;
+    width: 240px;
+    background-color: var(--sidebar-bg);
+    height: 100%;
+    padding-top: 70px;
+    padding-bottom: 54px;
+}
+
+.logo{
+    position: fixed;
+    top: 0;
+    width: 240px;
+    height: 70px;
+    display: flex;
+    align-items: center;
+    padding: 0 25px 0 28px;
+}
