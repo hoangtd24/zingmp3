@@ -1,17 +1,18 @@
 .wrapper{
     position: fixed;
     z-index: 1;
-    width: 240px;
+    width: var(--width-sidebar);
     background-color: var(--sidebar-bg);
     height: 100vh;
     padding-top: 70px;
-    padding-bottom: 54px;
+    display: flex;
+    flex-direction: column;
 }
 
 .logo{
     position: fixed;
     top: 0;
-    width: 240px;
+    width: var(--width-sidebar);
     height: 70px;
     display: flex;
     align-items: center;
@@ -20,4 +21,103 @@
 
 .active{
     color: rgb(104, 63, 5);
+}
+
+.separate{
+    height: 1px;
+    background-color: rgb(152, 152, 152);
+    margin: 16px 24px 0 24px;
+}
+
+.banner-vip{
+    padding: 15px 8px;
+    border-radius: 8px;
+    margin: 20px;
+    text-align: center;
+    background-image: linear-gradient(117deg,#5a4be7,#c86dd7 102%);
+}
+
+.banner-title{
+    font-size: 1.3rem;
+    color: var(--white-color);
+    font-weight: 700;
+}
+
+.banner-btn{
+    padding: 8px 35px;
+    background-color: #ffdb00;
+    color: rgb(56, 56, 56);
+    font-size: 1.2rem;
+    border-radius: 999px;
+    font-weight: 700;
+    margin-top: 12px;
+    cursor: pointer;
+    transition: opacity 0.3s ease-in;
+
+    &:hover{
+        opacity: 0.8;
+    }
+}
+
+.heading{
+    margin: 16px 28px 8px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.library{
+    flex: 1;
+    padding-bottom: calc(var(--height-player-pc) + 55px);
+    overflow-y: auto;
+    &:hover .icon{
+       opacity: 1;
+    }
+}
+.title{
+    color: var(--white-color);
+    font-weight: 700;
+    font-size: 1.2rem;
+}
+
+.icon{
+    display: flex;
+    align-items: center;
+    transition: all 0.5s ease;
+    opacity: 0;
+    cursor: pointer;
+}
+
+.checkbox-item{
+    display: flex;
+    align-items: center;
+}
+
+.actions-btn{
+    margin-top: 20px;
+    display: flex;
+    justify-content: flex-end;
+}
+
+.create-playlist{
+    position: fixed;
+    left: 0;
+    width: var(--width-sidebar);
+    bottom: var(--height-player-pc);
+    display: flex;
+    align-items: center;
+    padding: 14px 26px;
+    background-color: var(--sidebar-bg);
+    border-top: 1px solid rgb(152, 152, 152);
+    cursor: pointer;
+
+    & .icon{
+        opacity: 1;
+    }
+
+    & .title{
+        font-size: 1.4rem;
+        font-weight: 600;
+        margin-left: 8px;
+    }
 }
