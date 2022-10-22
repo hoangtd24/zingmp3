@@ -1,0 +1,59 @@
+.wrapper{
+    display: flex;
+    padding: 8px 10px;
+
+    &:hover{
+        background-color: #505050;
+    }
+
+    &:hover .btn-start{
+        display: flex;
+    }
+}
+
+
+.wrapper-img{
+    position: relative;
+    width: 52px;
+    height: 52px;
+    overflow: hidden;
+    border-radius: 4px;
+
+    & img{
+        width: 100%;
+        height: auto;
+    }
+
+}
+
+.btn-start{
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    top: 0;
+    align-items: center;
+    justify-content: center;
+    color: var(--white-color);
+    cursor: pointer;
+    display: none;
+}
+
+.wrapper-info{
+    margin-left: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+    & .song-name{
+        color: var(--white-color);
+        font-size: 1.4rem;
+        font-weight: 500;
+    }
+
+    & .singer-name{
+        font-size: 1.2rem;
+        font-weight: 400;
+        color: rgba(255,255,255,0.5);
+    }
+}
