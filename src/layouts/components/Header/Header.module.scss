@@ -1,7 +1,7 @@
 .header{
     position: fixed;
     top: 0;
-    width: 100%;
+    width: calc(100% - var(--width-sidebar));
     height: 70px;
     background-color: var(--layout-bg);
     z-index: 2;
@@ -11,4 +11,40 @@
     display: flex;
     align-items: center;
     justify-content: space-between;
+}
+
+.actions{
+    display: flex;
+    align-items: center;
+}
+
+.action-item{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 40px;
+    color: #d8d8d8;
+    border-radius: 50%;
+    background-color: rgba(255,255,255,0.1);
+    cursor: pointer;
+
+    &:hover{
+        opacity: 0.9;
+    }
+}
+
+.action-item + .action-item{
+    margin-left: 12px;
+}
+
+
+.title{
+    color: #dadada;
+    font-size: 1.4rem !important;
+}
+
+.icon{
+    color: #dadada;
+    font-size: 2rem !important;
 }
