@@ -10,13 +10,15 @@ import SearchItem from "./SearchItem/SearchItem";
 import { useEffect, useState } from "react";
 import { clearListSong, getSongByName } from "../../features/search/searchSlice";
 import useDebounce from "../../hooks/useDebounce"
+import { CircularProgress } from "@mui/material";
 
 const cx = classNames.bind(styles)
 
 function Search() {
     const [searchValue, setSearchvalue] = useState('')
     const [open, setOpen] = useState(false)
-    const {listSongsName} = useSelector(state => state.song)
+    const {listSongsName,loading} = useSelector(state => state.song)
+    const {primayBg}= useSelector(state=> state.theme.currentBg)
 
     const debounced = useDebounce(searchValue,500)
 
@@ -39,7 +41,7 @@ function Search() {
             placement="bottom"
             onClickOutside={()=> setOpen(false)}
             render={attrs => (
-                <div className={cx("search-box")} tabIndex="-1" {...attrs}>
+                <div className={cx("search-box")} tabIndex="-1" {...attrs} style={{backgroundColor: primayBg}}>
                     <span className={cx("search-heading")}>Gợi ý kết quả</span>
                     {listSongsName.map((item,index) => <SearchItem data={item} key={index}/>)}
                 </div>
@@ -58,12 +60,25 @@ function Search() {
                     className={cx("search-input")}
                     placeholder="Tìm kiếm bài hát, nghệ sĩ, lời bài hát,..."
                 />
-                <div 
-                    className={cx("clear-icon")}
-                    onClick= {() =>setSearchvalue('')}
-                >
-                    <ClearIcon />
-                </div>
+                {
+                    !loading && !!searchValue &&(
+                        <div 
+                            className={cx("clear-icon")}
+                            onClick= {() =>setSearchvalue('')}
+                        >
+                            <ClearIcon />
+                        </div>
+                    )
+                }
+                {
+                    loading && (
+                        <div 
+                            className={cx("loading-icon")}
+                        >
+                            <CircularProgress color="inherit"/>
+                        </div>
+                    )
+                }
             </div>
         </Tippy>
     );

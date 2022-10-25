@@ -4,11 +4,9 @@
     --width-search: 540px;
     --width-sidebar: 240px;
     --height-player-pc: 90px;
-    --layout-bg: #0F1A2E;
-    --player-bg: #172f4f;
-    --sidebar-bg: #1B2639;
+    --player-bg: rgb(255,255,255,0.01);
+    --sidebar-bg: rgb(255,255,255,0.05);
     --sidebar-popup-bg: #2a4162;
-    --primary-bg: #203d65;
     --alpha-layout-bg: rgba(29,55,90,0.8);
     --queue-player-popup-bg: #0b274c;
     --blur-queue-bg: rgba(29,55,90,0.9019607843137255);
@@ -83,23 +81,3 @@ html *::-webkit-scrollbar-track {
 }
 
 //custom menu setting
-
-.css-kk1bwy-MuiButtonBase-root-MuiMenuItem-root .MuiListItemIcon-root {
-    min-width: 30px !important;
-}
-
-.MuiListItemText-root .css-10hburv-MuiTypography-root {
-    margin: 0;
-    font-family: "Inter";
-    font-weight: 400;
-    font-size: 1.4rem;
-    line-height: 1.5;
-    letter-spacing: 0.00938em;
-    display: block;
-}
-
-.css-1l0ng88-MuiButtonBase-root-MuiMenuItem-root:hover {
-    -webkit-text-decoration: none;
-    text-decoration: none;
-    background-color: rgba(0, 0, 0, 0.2) !important;
-}

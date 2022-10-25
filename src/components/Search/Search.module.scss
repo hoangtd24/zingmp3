@@ -4,6 +4,8 @@
     background-color: #273143;
     border-radius: 8px;
     padding: 16px 10px;
+    max-height: 380px;
+    overflow: auto;
 }
 
 .search-heading{
@@ -18,11 +20,12 @@
     width: var(--width-search);
     height: 40px;
     border-radius: 999px;
-    background-color: #273143;
+    background-color: var(--sidebar-bg);
     color: #dadada;
+    position: relative;
 }
 
-.search-icon,.clear-icon{
+.search-icon,.clear-icon,.loading-icon{
     display: flex;
     justify-content: center;
     align-items: center;
@@ -35,12 +38,19 @@
     font-size: 1.4rem;
     color: #eee;
     flex: 1;
-
-    &:not(:placeholder-shown) ~ .clear-icon{
-        display: flex;
-    }
 }
 
 .clear-icon{
-    display: none;
+    position: absolute;
+    right: 0;
+}
+
+.loading-icon{
+    position: absolute;
+    right: 0;
+
+    & > span{
+        width: 16px !important;
+        height: 16px !important;
+    }
 }

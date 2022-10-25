@@ -7,6 +7,7 @@
     padding-top: 70px;
     display: flex;
     flex-direction: column;
+    padding-bottom: calc(var(--height-player-pc) + 55px);
 }
 
 .logo{
@@ -68,7 +69,6 @@
 
 .library{
     flex: 1;
-    padding-bottom: calc(var(--height-player-pc) + 55px);
     overflow-y: auto;
     &:hover .icon{
        opacity: 1;

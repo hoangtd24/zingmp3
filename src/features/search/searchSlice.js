@@ -8,6 +8,7 @@ export const getSongByName = createAsyncThunk('song/getSong', async (param) => {
 const searchSlice = createSlice({
     name: 'search',
     initialState: {
+        loading: false,
         listSongsName: [],
     },
     reducers: {
@@ -17,8 +18,12 @@ const searchSlice = createSlice({
 
     },
     extraReducers: (builder) => {
+        builder.addCase(getSongByName.pending, (state,action) => {
+            state.loading = true
+        })
         builder.addCase(getSongByName.fulfilled, (state,action) => {
             state.listSongsName = action.payload
+            state.loading = false
         })
     }
 })

@@ -20,11 +20,13 @@ import DescriptionOutlinedIcon from '@mui/icons-material/DescriptionOutlined';
 import SecurityOutlinedIcon from '@mui/icons-material/SecurityOutlined';
 import LogoutIcon from '@mui/icons-material/Logout';
 import StorefrontOutlinedIcon from '@mui/icons-material/StorefrontOutlined';
+import { useState, useEffect } from 'react';
+import { useSelector } from 'react-redux';
 
 import Search from '../../../components/Search/Search';
 import styles from './Header.module.scss';
-import { useState, useEffect } from 'react';
 import { Avatar } from '@mui/material';
+import {ShirtTheme } from '../../../components/icons';
 
 const cx = classNames.bind(styles);
 
@@ -64,22 +66,27 @@ const settingMenu = [
 function Header() {
     const [openSetting, setOpenSetting] = useState(false);
     const [openUserMenu, setOpenUserMenu] = useState(false);
+    const {layoutBg, primaryBg} = useSelector(state => state.theme.currentBg)
 
-    useEffect(()=> {
-    },[])
+    useEffect(() => {}, []);
 
     return (
-        <header className={cx('header')}>
+        <header className={cx('header')} style={{backgroundColor: layoutBg}}>
             <Search />
             <div className={cx('actions')}>
+                <Tippy content="Chủ đề">
+                    <Link to="/" className={cx('action-item')}>
+                        <ShirtTheme/>
+                    </Link>
+                </Tippy>
                 <Tippy content="Nâng cấp VIP">
                     <Link to="/" className={cx('action-item')}>
-                        <DiamondOutlinedIcon sx={{ fontSize: '24px' }} />
+                        <DiamondOutlinedIcon sx={{ fontSize: '20px' }} />
                     </Link>
                 </Tippy>
                 <Tippy content="Tải lên">
                     <div className={cx('action-item')}>
-                        <FileUploadOutlinedIcon sx={{ fontSize: '26px' }} />
+                        <FileUploadOutlinedIcon sx={{ fontSize: '24px' }} />
                     </div>
                 </Tippy>
                 <HeadlessTippy
@@ -89,65 +96,24 @@ function Header() {
                     placement="bottom-end"
                     render={(attrs) => (
                         <div className="box" tabIndex="-1" {...attrs}>
-                            <Paper sx={{ width: 240, maxWidth: '100%', backgroundColor: '#203d65', color: 'white' }}>
+                            <Paper sx={{ width: 240, maxWidth: '100%',backgroundColor:primaryBg, color: 'white' }}>
                                 <MenuList>
                                     {settingMenu.map((item, index) => {
                                         if (item.divider) {
-                                            return <Divider key={index}/>;
+                                            return <Divider key={index} />;
                                         } else {
                                             return (
-                                                <MenuItem sx={{ padding: '12px 16px' }} key={index}>
-                                                    <ListItemIcon>
-                                                            {item.icon}
-                                                    </ListItemIcon>
+                                                <MenuItem
+                                                    sx={{ padding: '12px 16px' }}
+                                                    key={index}
+                                                    className={cx('menu-item')}
+                                                >
+                                                    <ListItemIcon>{item.icon}</ListItemIcon>
                                                     <ListItemText className={cx('title')}>{item.title}</ListItemText>
                                                 </MenuItem>
                                             );
                                         }
                                     })}
-                                    {/* <MenuItem sx={{ padding: '12px 16px' }}>
-                                        <ListItemIcon>
-                                            <BlockIcon className={cx('icon')} />
-                                        </ListItemIcon>
-                                        <ListItemText className={cx('title')}>Danh sách chặn</ListItemText>
-                                    </MenuItem>
-                                    <MenuItem sx={{ padding: '12px 16px' }}>
-                                            <ListItemIcon>
-                                                <HdOutlinedIcon className={cx('icon')} />
-                                            </ListItemIcon>
-                                            <ListItemText className={cx('title')}>Chất lượng nhạc</ListItemText>
-                                    </MenuItem>
-                                    <MenuItem sx={{ padding: '12px 16px' }}>
-                                        <ListItemIcon>
-                                            <PlayCircleFilledWhiteOutlinedIcon className={cx('icon')} />
-                                        </ListItemIcon>
-                                        <ListItemText className={cx('title')}>Giao diện</ListItemText>
-                                    </MenuItem>
-                                    <Divider />
-                                    <MenuItem sx={{ padding: '12px 16px' }}>
-                                        <ListItemIcon>
-                                            <ErrorOutlineOutlinedIcon className={cx('icon')} />
-                                        </ListItemIcon>
-                                        <ListItemText className={cx('title')}>Giới thiệu</ListItemText>
-                                    </MenuItem>
-                                    <MenuItem sx={{ padding: '12px 16px' }}>
-                                        <ListItemIcon>
-                                            <LocalPhoneOutlinedIcon className={cx('icon')} />
-                                        </ListItemIcon>
-                                        <ListItemText className={cx('title')}>Liên hệ</ListItemText>
-                                    </MenuItem>
-                                    <MenuItem sx={{ padding: '12px 16px' }}>
-                                        <ListItemIcon>
-                                            <DescriptionOutlinedIcon className={cx('icon')} />
-                                        </ListItemIcon>
-                                        <ListItemText className={cx('title')}>Thỏa thuận sử dụng</ListItemText>
-                                    </MenuItem>
-                                    <MenuItem sx={{ padding: '12px 16px' }}>
-                                        <ListItemIcon>
-                                            <SecurityOutlinedIcon className={cx('icon')} />
-                                        </ListItemIcon>
-                                        <ListItemText className={cx('title')}>Chính sách bảo mật</ListItemText>
-                                    </MenuItem> */}
                                 </MenuList>
                             </Paper>
                         </div>
@@ -166,22 +132,22 @@ function Header() {
                     placement="bottom-end"
                     render={(attrs) => (
                         <div className="box" tabIndex="-1" {...attrs}>
-                            <Paper sx={{ width: 240, maxWidth: '100%', backgroundColor: '#203d65', color: 'white' }}>
+                            <Paper sx={{ width: 240, maxWidth: '100%', backgroundColor: primaryBg, color: 'white' }}>
                                 <MenuList>
-                                    <MenuItem sx={{ padding: '12px 16px' }}>
+                                    <MenuItem sx={{ padding: '12px 16px' }} className={cx('menu-item')}>
                                         <ListItemIcon>
                                             <DiamondOutlinedIcon className={cx('icon')} />
                                         </ListItemIcon>
                                         <ListItemText className={cx('title')}>Nâng cấp VIP</ListItemText>
                                     </MenuItem>
-                                    <MenuItem sx={{ padding: '12px 16px' }}>
+                                    <MenuItem sx={{ padding: '12px 16px' }} className={cx('menu-item')}>
                                         <ListItemIcon>
                                             <StorefrontOutlinedIcon className={cx('icon')} />
                                         </ListItemIcon>
                                         <ListItemText className={cx('title')}>Mua code VIP</ListItemText>
                                     </MenuItem>
                                     <Divider />
-                                    <MenuItem sx={{ padding: '12px 16px' }}>
+                                    <MenuItem sx={{ padding: '12px 16px' }} className={cx('menu-item')}>
                                         <ListItemIcon>
                                             <LogoutIcon className={cx('icon')} />
                                         </ListItemIcon>
@@ -192,7 +158,7 @@ function Header() {
                         </div>
                     )}
                 >
-                    <Tippy content="Cài đặt">
+                    <Tippy>
                         <Avatar
                             onClick={() => setOpenUserMenu(!openUserMenu)}
                             className={cx('action-item')}
