@@ -3,26 +3,26 @@ import { createSlice } from "@reduxjs/toolkit";
 export const themeSlice = createSlice({
     name: 'theme',
     initialState: {
-        currentBg: {
-            layoutBg: '#162a45',
-            playerBg: '#172f4f',
-            primaryBg: '#203d65',
-            bgImage: ''
+        currentTheme: {
+            theme: 'default',
+
         },
-        previewBg: {
+        previewTheme:{
+
         }
         
     },
     reducers: {
-        setBg: (state,action) => {
-            state.currentBg = action.payload
+        setTheme: (state,action) => {
+            state.currentTheme = action.payload
+            document.documentElement.setAttribute('data-theme', action.payload.theme)
         },
-        toggleBg: (state,action) => {
-            state.previewBg = action.payload
+        toggleTheme: (state,action) => {
+            state.previewTheme = action.payload
         }
     }
 })
 
-export const {setBg, toggleBg} = themeSlice.actions
+export const {setTheme, toggleTheme} = themeSlice.actions
 
 export default themeSlice.reducer

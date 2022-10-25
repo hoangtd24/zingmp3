@@ -101,7 +101,6 @@ function SideBar() {
         left: '50%',
         transform: 'translate(-50%, -50%)',
         width: 400,
-        bgcolor: '#203d65',
         borderRadius: '8px',
         boxShadow: 24,
         p: 4,
@@ -179,7 +178,7 @@ function SideBar() {
                 aria-labelledby="modal-modal-title"
                 aria-describedby="modal-modal-description"
             >
-                <Box sx={style}>
+                <Box sx={style} className={cx('modal')}>
                     <Typography id="modal-modal-title" variant="h4" component="h2">
                         Thư viện cá nhân
                     </Typography>

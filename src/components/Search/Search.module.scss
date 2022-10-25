@@ -1,11 +1,12 @@
 
 .search-box{
     width: var(--width-search);
-    background-color: #273143;
     border-radius: 8px;
     padding: 16px 10px;
     max-height: 380px;
     overflow: auto;
+    box-shadow: 0 4px 6px 0 rgb(32 33 36 / 28%);
+    background-color: var(--primary-bg);
 }
 
 .search-heading{

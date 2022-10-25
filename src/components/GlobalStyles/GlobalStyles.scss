@@ -1,23 +1,65 @@
 @import 'normalize.css';
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&family=Montserrat:wght@100&family=Noto+Sans+KR:wght@100;300;400;500;700&display=swap');
 :root{
+    --layout-bg: #0f1a2e;
+    --player-bg: #111f3b;
+    --primary-bg: #173b45;
+    --text-placeholder: #dadada;
+    --navigation-text: #dadada;
+    --sidebar-bg: hsla(0,0%,100%,0.05);
+    --purple-primary: #158370;
     --width-search: 540px;
     --width-sidebar: 240px;
     --height-player-pc: 90px;
-    --player-bg: rgb(255,255,255,0.01);
-    --sidebar-bg: rgb(255,255,255,0.05);
     --sidebar-popup-bg: #2a4162;
     --alpha-layout-bg: rgba(29,55,90,0.8);
     --queue-player-popup-bg: #0b274c;
     --blur-queue-bg: rgba(29,55,90,0.9019607843137255);
-    --purple-primary: #158370;
     --link-text-hover: #429eff;
     --chart-bg-img-alpha: rgba(29,55,90,0.9);
     --linear-gradient-bg: linear-gradient(180deg,#224472,#244572);
-    --navigation-text: #dadada;
     --white-color: #ffffff;
 }
 
+html[data-theme='light-dark'] {
+    --layout-bg: #1e1e1e;
+    --player-bg: #181818;
+    --primary-bg: #333;
+    --text-placeholder: #757575;
+    --navigation-text: #a0a0a0;
+    --sidebar-bg: hsla(0,0%,100%,0.05);
+    --purple-primary: #9b4de0;
+}
+
+html[data-theme='pink'] {
+    --layout-bg: #411636;
+    --player-bg: #4c1a3f;
+    --primary-bg: #642654;
+    --text-placeholder: #dadada;
+    --navigation-text: #dadada;
+    --sidebar-bg: hsla(0,0%,100%,0.05);
+    --purple-primary: #ca4974;
+}
+
+html[data-theme='brown'] {
+    --layout-bg: #251b18;
+    --player-bg: #30201d;
+    --primary-bg: #46312b;
+    --text-placeholder: #dadada;
+    --navigation-text: #dadada;
+    --sidebar-bg: hsla(0,0%,100%,0.05);
+    --purple-primary: #b65f20;
+}
+
+html[data-theme='brown'] {
+    --layout-bg: #251b18;
+    --player-bg: #30201d;
+    --primary-bg: #46312b;
+    --text-placeholder: #dadada;
+    --navigation-text: #dadada;
+    --sidebar-bg: hsla(0,0%,100%,0.05);
+    --purple-primary: #b65f20;
+}
 *{
     margin: 0;
     padding: 0;

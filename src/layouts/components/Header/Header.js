@@ -21,12 +21,11 @@ import SecurityOutlinedIcon from '@mui/icons-material/SecurityOutlined';
 import LogoutIcon from '@mui/icons-material/Logout';
 import StorefrontOutlinedIcon from '@mui/icons-material/StorefrontOutlined';
 import { useState, useEffect } from 'react';
-import { useSelector } from 'react-redux';
-
 import Search from '../../../components/Search/Search';
 import styles from './Header.module.scss';
 import { Avatar } from '@mui/material';
 import {ShirtTheme } from '../../../components/icons';
+import ThemeModal from '../../../components/ThemeModal/ThemeModal';
 
 const cx = classNames.bind(styles);
 
@@ -66,16 +65,20 @@ const settingMenu = [
 function Header() {
     const [openSetting, setOpenSetting] = useState(false);
     const [openUserMenu, setOpenUserMenu] = useState(false);
-    const {layoutBg, primaryBg} = useSelector(state => state.theme.currentBg)
+    const [showTheme,setShowTheme] = useState(false)
 
     useEffect(() => {}, []);
 
     return (
-        <header className={cx('header')} style={{backgroundColor: layoutBg}}>
+        <header className={cx('header')}>
             <Search />
             <div className={cx('actions')}>
                 <Tippy content="Chủ đề">
-                    <Link to="/" className={cx('action-item')}>
+                    <Link 
+                        to="/" 
+                        className={cx('action-item')}
+                        onClick={()=> setShowTheme(!showTheme)}
+                    >
                         <ShirtTheme/>
                     </Link>
                 </Tippy>
@@ -95,8 +98,8 @@ function Header() {
                     interactive
                     placement="bottom-end"
                     render={(attrs) => (
-                        <div className="box" tabIndex="-1" {...attrs}>
-                            <Paper sx={{ width: 240, maxWidth: '100%',backgroundColor:primaryBg, color: 'white' }}>
+                        <div className={cx('box')} tabIndex="-1" {...attrs}>
+                            <Paper className={cx('box-setting')} sx={{ width: 240, maxWidth: '100%', color: 'white' }}>
                                 <MenuList>
                                     {settingMenu.map((item, index) => {
                                         if (item.divider) {
@@ -131,8 +134,8 @@ function Header() {
                     onClickOutside={() => setOpenUserMenu(false)}
                     placement="bottom-end"
                     render={(attrs) => (
-                        <div className="box" tabIndex="-1" {...attrs}>
-                            <Paper sx={{ width: 240, maxWidth: '100%', backgroundColor: primaryBg, color: 'white' }}>
+                        <div className={cx('box')} tabIndex="-1" {...attrs}>
+                            <Paper sx={{ width: 240, maxWidth: '100%', color: 'white' }}>
                                 <MenuList>
                                     <MenuItem sx={{ padding: '12px 16px' }} className={cx('menu-item')}>
                                         <ListItemIcon>
@@ -168,6 +171,7 @@ function Header() {
                     </Tippy>
                 </HeadlessTippy>
             </div>
+            <ThemeModal open={showTheme} setOpen={setShowTheme}/>
         </header>
     );
 }

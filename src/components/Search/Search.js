@@ -18,8 +18,6 @@ function Search() {
     const [searchValue, setSearchvalue] = useState('')
     const [open, setOpen] = useState(false)
     const {listSongsName,loading} = useSelector(state => state.song)
-    const {primayBg}= useSelector(state=> state.theme.currentBg)
-
     const debounced = useDebounce(searchValue,500)
 
     const dispatch = useDispatch()
@@ -41,8 +39,8 @@ function Search() {
             placement="bottom"
             onClickOutside={()=> setOpen(false)}
             render={attrs => (
-                <div className={cx("search-box")} tabIndex="-1" {...attrs} style={{backgroundColor: primayBg}}>
-                    <span className={cx("search-heading")}>Gợi ý kết quả</span>
+                <div className={cx("search-box")} tabIndex="-1" {...attrs}>
+                    <span className={cx("search-heading")} >Gợi ý kết quả</span>
                     {listSongsName.map((item,index) => <SearchItem data={item} key={index}/>)}
                 </div>
             )}
