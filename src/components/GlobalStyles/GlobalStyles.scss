@@ -3,7 +3,7 @@
 :root{
     --layout-bg: #0f1a2e;
     --player-bg: #111f3b;
-    --primary-bg: #173b45;
+    --primary-bg: #203d65;
     --text-placeholder: #dadada;
     --navigation-text: #dadada;
     --sidebar-bg: hsla(0,0%,100%,0.05);
@@ -19,6 +19,9 @@
     --chart-bg-img-alpha: rgba(29,55,90,0.9);
     --linear-gradient-bg: linear-gradient(180deg,#224472,#244572);
     --white-color: #ffffff;
+    --player-text: #fff;
+    --text-secondary: #ffffff80;
+    --alpha-bg: hsla(0,0%,100%,0.1);
 }
 
 html[data-theme='light-dark'] {
@@ -51,14 +54,14 @@ html[data-theme='brown'] {
     --purple-primary: #b65f20;
 }
 
-html[data-theme='brown'] {
-    --layout-bg: #251b18;
-    --player-bg: #30201d;
-    --primary-bg: #46312b;
-    --text-placeholder: #dadada;
-    --navigation-text: #dadada;
-    --sidebar-bg: hsla(0,0%,100%,0.05);
-    --purple-primary: #b65f20;
+
+html[data-theme='light'] {
+    --layout-bg: #fff;
+    --player-bg: #fff;
+    --primary-bg: #fff;
+    --text-placeholder: #757575;
+    --sidebar-bg: rgba(0,0,0,0.05);
+    --purple-primary: #8d22c3;
 }
 *{
     margin: 0;
@@ -123,3 +126,14 @@ html *::-webkit-scrollbar-track {
 }
 
 //custom menu setting
+
+.add-playlist-content .icon.ic-svg-add {
+    border-radius: 2px;
+    height: 25px;
+    width: 25px;
+    margin-right: 10px;
+}
+
+.icon.ic-svg-add {
+    background-image: url(https://zjs.zmdcdn.me/zmp3-desktop/releases/v1.7.52/static/media/thumb-add.2971eb21.svg);
+}

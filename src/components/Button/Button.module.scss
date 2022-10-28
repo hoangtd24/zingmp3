@@ -1,0 +1,44 @@
+.wrapper{
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    width: 100%;
+
+    &:hover{
+        background-color: var(--alpha-bg);
+    }
+}
+
+.small{
+    padding: 10px 14px;
+    & .icon > svg {
+        font-size: 1.8rem;
+    }
+}
+
+.large{
+    padding: 12px 16px;
+    & .icon > svg {
+        font-size: 2rem;
+    }
+}
+
+.icon{
+    display: flex;
+    align-items: center;
+    color: var(--player-text);
+    margin-right: 12px;
+
+}
+
+.title{
+    font-size: 1.4rem;
+    color: var(--player-text);
+}   
+
+.icon-more{
+    display: flex;
+    align-items: center;
+    margin-left: auto;
+    color: var(--player-text);
+}

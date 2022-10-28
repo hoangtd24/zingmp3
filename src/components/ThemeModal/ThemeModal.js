@@ -5,12 +5,22 @@ import ThemeItem from './ThemeItem';
 
 import classNames from 'classnames/bind';
 import styles from './ThemeModal.module.scss'
+import { useDispatch, useSelector } from 'react-redux';
+import { setTheme } from '../../features/theme/themeSlice';
 
 const cx = classNames.bind(styles)
 const themes = [
     {
         type: 'Dynamic',
         data: [
+            {
+                image: 'https://zmp3-static.zmdcdn.me/skins/zmp3-v6.1/images/theme/London-thumb.png',
+                color: {
+                    theme:'light',
+                    bgImage: 'https://zmp3-static.zmdcdn.me/skins/zmp3-v6.1/images/theme/London-light1.jpg',
+                },
+                name: 'London',
+            },
             {
                 image: 'https://zmp3-static.zmdcdn.me/skins/zmp3-v6.1/images/theme/dynamic-light-dark-1.jpg',
                 color: {
@@ -21,7 +31,7 @@ const themes = [
             {
                 image: 'https://zmp3-static.zmdcdn.me/skins/zmp3-v6.1/images/theme/dynamic-blue.jpg',
                 color: {
-                    theme: ''
+                    theme: 'default'
                 },
                 name: 'Xanh Da Trời'
             },
@@ -69,7 +79,12 @@ const themes = [
 ];
 function ThemeModal({ open, setOpen }) {
 
-    const handleClose = () => setOpen(false);
+    const {currentTheme} = useSelector(state => state.theme)
+    const dispatch = useDispatch()
+    const handleClose = () => {
+        dispatch(setTheme(currentTheme))
+        setOpen(false);
+    }
 
     return (
         <Modal

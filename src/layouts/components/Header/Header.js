@@ -161,14 +161,12 @@ function Header() {
                         </div>
                     )}
                 >
-                    <Tippy>
-                        <Avatar
-                            onClick={() => setOpenUserMenu(!openUserMenu)}
-                            className={cx('action-item')}
-                            src="https://s120-ava-talk-zmp3.zmdcdn.me/b/3/1/c/2/120/93f577eb9ce46362a4b309c258facca8.jpg"
-                            alt=""
-                        />
-                    </Tippy>
+                    <Avatar
+                        onClick={() => setOpenUserMenu(!openUserMenu)}
+                        className={cx('action-item')}
+                        src="https://s120-ava-talk-zmp3.zmdcdn.me/b/3/1/c/2/120/93f577eb9ce46362a4b309c258facca8.jpg"
+                        alt=""
+                    />
                 </HeadlessTippy>
             </div>
             <ThemeModal open={showTheme} setOpen={setShowTheme}/>

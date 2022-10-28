@@ -17,12 +17,14 @@ export const themeSlice = createSlice({
             state.currentTheme = action.payload
             document.documentElement.setAttribute('data-theme', action.payload.theme)
         },
-        toggleTheme: (state,action) => {
+        previewTheme: (state,action) => {
             state.previewTheme = action.payload
+            document.documentElement.setAttribute('data-theme', action.payload.theme)
+
         }
     }
 })
 
-export const {setTheme, toggleTheme} = themeSlice.actions
+export const {setTheme, previewTheme} = themeSlice.actions
 
 export default themeSlice.reducer

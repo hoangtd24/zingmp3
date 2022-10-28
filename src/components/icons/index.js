@@ -324,3 +324,87 @@ export const ShirtTheme = () => (
         </g>
     </svg>
 );
+
+export const AddIcon = () => (
+    <svg
+        width="20px"
+        height="20px"
+        viewBox="0 0 20 20"
+        version="1.1"
+        xmlns="http://www.w3.org/2000/svg"
+        xmlnsXlink="http://www.w3.org/1999/xlink"
+    >
+        <title>add playlist</title>
+        <defs>
+            <linearGradient x1="-11.2417244%" y1="105.018729%" x2="103.770488%" y2="-22.9524219%" id="linearGradient-1">
+                <stop stop-color="#5A1EAE" offset="0%"></stop>
+                <stop stop-color="#CE267A" offset="100%"></stop>
+            </linearGradient>
+            <linearGradient x1="0%" y1="0%" x2="123.089493%" y2="153.317075%" id="linearGradient-2">
+                <stop stop-color="#FFFFFF" stop-opacity="0.5" offset="0%"></stop>
+                <stop stop-color="#FFFFFF" stop-opacity="0.5" offset="100%"></stop>
+            </linearGradient>
+            <rect id="path-3" x="0" y="0" width="19" height="19" rx="4"></rect>
+        </defs>
+        <g id="Symbols" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+            <g id="menu/tab/playlist" transform="translate(0.000000, -37.000000)">
+                <g id="add-playlist" transform="translate(0.000000, 37.000000)">
+                    <g id="Rectangle">
+                        <use fill="url(#linearGradient-1)" xlinkHref="#path-3"></use>
+                        <use fill-opacity="0.6" fill="url(#linearGradient-2)" xlinkHref="#path-3"></use>
+                    </g>
+                    <line
+                        x1="9.5"
+                        y1="4.5"
+                        x2="9.5"
+                        y2="14.5"
+                        id="Line-7"
+                        stroke="#FFFFFF"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                    ></line>
+                    <line
+                        x1="14.5"
+                        y1="9.5"
+                        x2="4.5"
+                        y2="9.5"
+                        id="Line-7"
+                        stroke="#FFFFFF"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                    ></line>
+                </g>
+            </g>
+        </g>
+    </svg>
+);
+
+export const Facebook = () => (
+    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 30 30">
+        <g fill="none" fill-rule="nonzero">
+            <path
+                fill="#3B5998"
+                d="M14.965 0C23.23 0 29.93 6.7 29.93 14.965S23.23 29.93 14.965 29.93 0 23.23 0 14.965C0 6.701 6.7 0 14.965 0z"
+            />
+            <path
+                fill="#FFF"
+                d="M16.787 10.302h1.929V7.453h-2.267v.01c-2.748.098-3.31 1.642-3.36 3.264h-.006v1.423h-1.87v2.79h1.87v7.478h2.82V14.94h2.309l.446-2.79h-2.755v-.86c0-.548.365-.988.884-.988z"
+            />
+        </g>
+    </svg>
+);
+
+export const Zalo = () => (
+    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 30 30">
+        <g fill="none" fill-rule="evenodd">
+            <path
+                fill="#008FE5"
+                d="M8.856 27.056L4.49 30l.749-5.11C2.032 22.295 0 18.445 0 14.147 0 6.334 6.716 0 15 0c8.284 0 15 6.334 15 14.147 0 7.813-6.716 14.147-15 14.147-2.19 0-4.269-.443-6.144-1.238z"
+            />
+            <path
+                fill="#FFF"
+                d="M6.544 16.4h3.502c.507 0 .87.243.87.699 0 .402-.435.699-.87.699H5.3c-.64 0-1.014-.318-1.014-.763 0-.211.084-.423.241-.614l3.889-4.766H5.24c-.483 0-.846-.243-.846-.678 0-.402.387-.72.846-.72h4.42c.7 0 1.014.392 1.014.763 0 .233-.109.497-.266.677L6.544 16.4zm10.634-3.304v3.77c0 .392 0 .995-.833.995-.507 0-.712-.243-.833-.646-.447.466-.99.71-1.654.71-1.63 0-2.875-1.218-2.875-2.934 0-1.673 1.28-2.955 2.875-2.955.64 0 1.268.223 1.654.7.048-.371.41-.636.833-.636.833 0 .833.604.833.996zm-4.456 1.895c0 .731.435 1.536 1.377 1.536.906 0 1.34-.805 1.34-1.536 0-.73-.422-1.557-1.34-1.557-.954 0-1.377.827-1.377 1.557zm4.983 2.023V10.49c0-.508.363-.847.87-.847s.87.339.87.847v6.524c0 .509-.363.847-.87.847s-.87-.338-.87-.847zm5.128-4.978c1.836 0 3.116 1.409 3.116 2.955 0 1.589-1.244 2.934-3.116 2.934s-3.115-1.345-3.115-2.934c0-1.546 1.28-2.955 3.115-2.955zm0 1.398c-.954 0-1.376.827-1.376 1.557 0 .731.434 1.536 1.376 1.536s1.377-.805 1.377-1.536c0-.73-.423-1.557-1.377-1.557z"
+            />
+        </g>
+    </svg>
+);

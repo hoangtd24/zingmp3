@@ -1,11 +1,13 @@
 import classNames from "classnames/bind";
 import CheckRoundedIcon from '@mui/icons-material/CheckRounded';
 import styles from "./ThemeModal.module.scss"
-import { useDispatch} from "react-redux";
-import { setTheme } from "../../features/theme/themeSlice";
+import { useDispatch, useSelector} from "react-redux";
+import { setTheme, previewTheme } from "../../features/theme/themeSlice";
+import { Fragment } from "react";
 
 const cx= classNames.bind(styles)
 function ThemeItem({theme}) {
+    const {currentTheme} = useSelector(state => state.theme)
     const dispatch = useDispatch();
 
     return ( 
@@ -18,11 +20,22 @@ function ThemeItem({theme}) {
                     >
                         ÁP DỤNG
                     </button>
-                    <button className={cx("btn-preview")}>XEM TRƯỚC</button>
+                    <button 
+                        className={cx("btn-preview")}
+                        onClick={()=> dispatch(previewTheme(theme.color))}
+                    >
+                        XEM TRƯỚC
+                    </button>
                 </div>
-                <button className={cx("btn-check")}>
-                    <CheckRoundedIcon sx={{color: 'white'}}/>
-                </button>
+                {
+                    currentTheme.theme === theme.color.theme ? (
+                        <button className={cx("btn-check")}>
+                            <CheckRoundedIcon sx={{color: 'white'}}/>
+                        </button>
+                    ) : (
+                        <Fragment />
+                    )
+                }
             </div>
             <p className={cx("theme-name")}>{theme.name}</p>
         </div>
